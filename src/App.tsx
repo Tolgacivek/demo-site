@@ -8,7 +8,15 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import AdminApp from './admin/AdminApp'; // ⬅️ Admin paneli import edildi
+
 function App() {
+  const isAdminPath = window.location.pathname.startsWith("/admin");
+
+  if (isAdminPath) {
+    return <AdminApp />;
+  }
+
   return (
     <div className="min-h-screen">
       <Header />
